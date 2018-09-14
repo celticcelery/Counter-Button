@@ -7,6 +7,7 @@ class CounterButton extends React.Component {
 
         this.incrementButton = this.incrementButton.bind(this);
         this.decrementButton = this.decrementButton.bind(this);
+        this.resetButton = this.resetButton.bind(this);
     }
 
     incrementButton(){
@@ -21,6 +22,12 @@ class CounterButton extends React.Component {
         });
     }
 
+    resetButton(){
+        this.setState({
+            counter: 0
+        })
+    }
+
     render() {
         return (
             <div>
@@ -32,6 +39,9 @@ class CounterButton extends React.Component {
                 </button>
                 <button onClick={this.decrementButton}>
                     Decrement
+                </button>
+                <button onClick={this.resetButton}>
+                    Reset
                 </button>
             </div>
         );

@@ -20,6 +20,7 @@ var CounterButton = function (_React$Component) {
 
         _this.incrementButton = _this.incrementButton.bind(_this);
         _this.decrementButton = _this.decrementButton.bind(_this);
+        _this.resetButton = _this.resetButton.bind(_this);
         return _this;
     }
 
@@ -35,6 +36,13 @@ var CounterButton = function (_React$Component) {
         value: function decrementButton() {
             this.setState({
                 counter: this.state.counter - 1
+            });
+        }
+    }, {
+        key: 'resetButton',
+        value: function resetButton() {
+            this.setState({
+                counter: 0
             });
         }
     }, {
@@ -58,6 +66,11 @@ var CounterButton = function (_React$Component) {
                     'button',
                     { onClick: this.decrementButton },
                     'Decrement'
+                ),
+                React.createElement(
+                    'button',
+                    { onClick: this.resetButton },
+                    'Reset'
                 )
             );
         }
